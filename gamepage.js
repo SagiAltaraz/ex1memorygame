@@ -1,3 +1,15 @@
+document.addEventListener('DOMContentLoaded', function(){
+    var closeButtons = document.getElementsByClassName('close');
+    for (var i = 0; i < closeButtons.length; i++) {
+        closeButtons[i].addEventListener('click', closeDialog);
+    }
+    document.getElementById('card-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    submit();
+    });
+});
+
+
 function openDialog() {
     const dialog = document.getElementById('dialog');
     dialog.style.display = 'block'; 
@@ -5,28 +17,21 @@ function openDialog() {
 }
 
 
+document.getElementsByClassName('close')  
 function closeDialog() {
     const dialog = document.getElementById('dialog');
+   if(dialog){
     dialog.style.display = 'none'; 
     dialog.classList.remove('jump'); 
+   }
 }
 
-document.getElementById('open-dialog').addEventListener('click', openDialog);
 
-document.getElementById('close-dialog').addEventListener('click', closeDialog);
+function submit(){
+    const playerName = document.getElementById('player-name').value;
+    const numCards = document.getElementById('num-cards').value;
+    localStorage.setItem('playerName', playerName);
+    localStorage.setItem('numCards', numCards);
+    window.location.href = 'playpage.html';
+}
 
-document.getElementById('card-form').addEventListener('submit', function(event) {
-    event.preventDefault(); 
-
-    const numCards = parseInt(document.getElementById('num-cards').value, 10);
- 
-    if (numCards % 2 !== 0) {
-        alert('The number of cards must be a multiple of 2.');
-        return; 
-    }
-    alert(`You selected ${numCards} cards.`);
-    closeDialog();
-});
-
-
-localStorage

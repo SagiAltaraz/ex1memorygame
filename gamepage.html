@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="gamepage.js"></script>
+    <script src="playpage.js"></script>
     <link rel="stylesheet" href="gamepagestyle.css"> 
     <title>Disney Memory Game</title>
 </head>
@@ -16,11 +17,17 @@
 </div>
 <div id="dialog" class="dialog">
     <div class="dialog-content">
-        <span id="close-dialog" class="close">&times;</span>
-        <h2>Select Number of Cards</h2>
+        <div id="close-dialog"  onclick="closeDialog()" >
+        <span class="close">x</span>
+        </div>
+        <h2>Lets Play</h2>
         <form id="card-form">
+            <label for="player-name">Enter your name:</label>
+            <input type="text" id="player-name" name="player-name" placeholder="Enter your name" required>
+            
             <label for="num-cards">How many cards do you want to play with?</label>
-            <input type="number" id="num-cards" name="num-cards" min="1" max="32" value="2" required>
+            <input type="number" id="num-cards" name="num-cards" min="1" max="32" value="1" required>
+            
             <button type="submit">Submit</button>
         </form>
     </div>

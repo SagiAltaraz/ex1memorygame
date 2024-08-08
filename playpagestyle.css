@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100vh; /* Ensure full viewport height */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.backgroundimg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: -1;
+    background-image: url(IMG/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.topinfo {
+    color: #f7e600;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.player {
+    font-size: 20px;
+    color: #f7e600;
+
+}
+#player-name{
+    color: #f7e600;
+    margin-left: 20px;
+
+}
+
+.grid-container {
+    display: grid;
+    margin-top: 75px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    width: 100%;
+    height: 70%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.grid-item {
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s; /* Smooth transition effect */
+}
+
+.grid-item:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.card-back, .front-card {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-back {
+    background-image: url("IMG/cardback.jpeg");
+}
+
+.match-counter {
+    position: fixed;
+    margin-right:20px ;
+    bottom: 10px;
+    color: #f7e600;
+    padding: 10px;
+    font-size: 26px;
+    z-index: 1000; 
+    
+}
+.play-again-dialog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-color: white;
+    border-radius: 50px;
+    width: 400px;
+    height: 300px;
+
+}
+
+.finish{
+    margin-bottom: 20px;
+    border-radius: 50px;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    
+}
+button {
+    background-color: yellow;
+    border: none;
+    text-align: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 30px;
+    color: rgb(20, 30, 200);
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+}
